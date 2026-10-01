@@ -85,6 +85,16 @@ SovereignBrief only needs `POST {APERTUS_BASE_URL}/chat/completions`. No closed 
 
 `next_actions` is normalized to five items.
 
+## Static demo (GitHub Pages)
+
+GitHub Pages cannot run this FastAPI app. `docs/index.html` is a static snapshot only: it explains the project and shows a brief already produced from `samples/sample_policy.txt`. It does not call Apertus.
+
+Intended free URL once Pages is turned on (Settings → Pages → GitHub Actions, or branch `main` folder `/docs`):
+
+https://sourendas.github.io/sovereign-brief/
+
+The interactive UI is `static/index.html`, served by `uvicorn` on your machine.
+
 ## Tests
 
 ```bash
@@ -100,6 +110,7 @@ Tests mock the LLM HTTP call; they do not call paid APIs and do not need a real 
 main.py                 # FastAPI + static UI
 sovereignbrief/         # config, LLM client, schema, PDF extract
 static/index.html       # paste / upload UI
+docs/index.html         # static Pages snapshot (not a live backend)
 samples/sample_policy.txt
 tests/
 .env.example
