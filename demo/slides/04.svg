@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#0f1419"/>
+<rect width="1280" height="8" fill="#3d9cf0"/>
+<text x="64" y="58" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700">SAVED BRIEF OUTCOME</text>
+<text x="64" y="108" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="40" font-weight="700">Five next actions</text>
+<rect x="64" y="160" width="1152" height="84" rx="14" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="212" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">1  Confirm approval of Nov 1 effective date by Friday</text>
+<rect x="64" y="258" width="1152" height="84" rx="14" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="310" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">2  Accept HelpdeskPro pause as interim risk control</text>
+<rect x="64" y="356" width="1152" height="84" rx="14" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="408" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">3  Nominate owners for retention jobs and Hindi privacy-notice QA</text>
+<rect x="64" y="454" width="1152" height="84" rx="14" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="506" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">4  Schedule training for front-desk staff</text>
+<rect x="64" y="552" width="1152" height="84" rx="14" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="604" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">5  Provide quote for HelpdeskPro migration budget</text>
+</svg>

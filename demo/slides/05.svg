@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#0f1419"/>
+<rect width="1280" height="8" fill="#3d9cf0"/>
+<text x="64" y="58" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700">TRY IT</text>
+<text x="64" y="108" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="40" font-weight="700">Open demo and source</text>
+<text x="64" y="180" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="700">Static demo</text>
+<text x="64" y="220" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="400">https://sourendas.github.io/sovereign-brief/</text>
+<text x="64" y="290" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="700">Repository</text>
+<text x="64" y="330" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="400">https://github.com/Sourendas/sovereign-brief</text>
+<text x="64" y="400" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="700">Track</text>
+<text x="64" y="440" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="400">2B Own Project · not Track 1 red-team</text>
+<text x="64" y="510" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="700">Built with</text>
+<text x="64" y="550" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="400">Python, FastAPI, Apertus 8B Instruct 2509, GitHub Pages</text>
+<text x="64" y="680" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="22">Deadline 16 Oct 2026 15:30 IST · Draft asset only · not submitted</text>
+</svg>

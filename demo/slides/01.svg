@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#0f1419"/>
+<rect width="1280" height="8" fill="#3d9cf0"/>
+<text x="64" y="58" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700">HACK APERTUS 2026  ·  TRACK 2B OWN PROJECT</text>
+<text x="64" y="108" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="40" font-weight="700">SovereignBrief</text>
+<rect x="64" y="150" width="1152" height="470" rx="16" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="230" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="400">Paste a policy or ops memo.</text>
+<text x="96" y="300" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="400">Apertus returns a summary and five next actions.</text>
+<text x="96" y="370" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="400">This cut shows the saved sample brief, not a new model call.</text>
+<text x="96" y="440" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="400">Static demo: sourendas.github.io/sovereign-brief</text>
+<text x="96" y="520" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="400">Local UI: uvicorn main:app  ·  static/index.html</text>
+<text x="64" y="680" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="22">Owner: Souren Das  ·  GitHub Sourendas  ·  Not a Devpost submission</text>
+</svg>

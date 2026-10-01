@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#0f1419"/>
+<rect width="1280" height="8" fill="#3d9cf0"/>
+<text x="64" y="58" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700">SAVED APERTUS BRIEF</text>
+<text x="64" y="108" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="40" font-weight="700">Summary from the 2 Oct 2026 run</text>
+<text x="64" y="155" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="400">Model used: swiss-ai/Apertus-8B-Instruct-2509 via the Hugging Face router (Public AI).</text>
+<text x="64" y="190" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="400">swiss-ai/Apertus-v1.5-8B was not on the router. This video makes no new inference call.</text>
+<rect x="64" y="230" width="1152" height="280" rx="16" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="290" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700">Summary</text>
+<text x="96" y="360" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="32" font-weight="700">Draft update to remote vendor access &amp; document</text>
+<text x="96" y="410" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="32" font-weight="700">retention (comments due Fri).</text>
+<text x="64" y="560" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="400">Risks, decisions, and open questions were not stored from that run, so they are not shown.</text>
+</svg>

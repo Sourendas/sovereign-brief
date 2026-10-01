@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#0f1419"/>
+<rect width="1280" height="8" fill="#3d9cf0"/>
+<text x="64" y="58" fill="#3d9cf0" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700">SAMPLE DOCUMENT</text>
+<text x="64" y="108" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="40" font-weight="700">Contoso Municipal Ops memo</text>
+<text x="64" y="150" fill="#9aa8bc" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="400">From samples/sample_policy.txt · comments due Friday</text>
+<rect x="64" y="175" width="1152" height="460" rx="16" fill="#1a2332" stroke="#2d3a4f"/>
+<text x="96" y="230" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">Subject: Draft update to remote vendor access &amp; document</text>
+<text x="96" y="270" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">retention (comments due Fri).</text>
+<text x="96" y="330" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">HelpdeskPro stores tickets in a US region by default.</text>
+<text x="96" y="370" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">FormFlow can pin EU storage but it is not enabled.</text>
+<text x="96" y="410" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">CloudOCR is used ad-hoc with personal emails.</text>
+<text x="96" y="460" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">Proposed effective date: 1 Nov 2026. Backlog: about 18,000 PDFs.</text>
+<text x="96" y="520" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">Asks: approve the date, accept a HelpdeskPro attachment pause,</text>
+<text x="96" y="560" fill="#e7ecf3" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="400">and nominate owners for retention jobs and Hindi privacy-notice QA.</text>
+</svg>
