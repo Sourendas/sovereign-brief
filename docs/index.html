@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SovereignBrief — static demo</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: #0f1419; color: #e7ecf3; }
+    main { max-width: 760px; margin: 0 auto; padding: 1.5rem; }
+    a { color: #3d9cf0; }
+    .note { color: #9aa8bc; font-size: 0.92rem; }
+    .card { background: #1a2332; border: 1px solid #2d3a4f; border-radius: 12px; padding: 1rem 1.1rem; margin: 1rem 0; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.05rem; margin: 0 0 0.5rem; }
+    ol { margin: 0.2rem 0 0 1.2rem; padding: 0; }
+    li { margin: 0.35rem 0; }
+    pre { white-space: pre-wrap; background: #0c1118; border-radius: 8px; padding: 0.75rem; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>SovereignBrief</h1>
+    <p>Hack Apertus 2026 — Track 2B Own Project. Paste a policy or ops note and get a short action brief from Switzerland’s open Apertus model.</p>
+    <p class="note">This page is a <strong>static snapshot</strong> for GitHub Pages. Pages cannot run the FastAPI app, and this page does not call a model or pretend to. Run the real UI locally with <code>uvicorn main:app</code> (see the README). Source: <a href="https://github.com/Sourendas/sovereign-brief">Sourendas/sovereign-brief</a>.</p>
+
+    <div class="card">
+      <h2>Sample document</h2>
+      <p class="note">From <a href="https://github.com/Sourendas/sovereign-brief/blob/main/samples/sample_policy.txt">samples/sample_policy.txt</a> (Contoso Municipal Ops memo, comments due Friday).</p>
+      <pre>Subject: Draft update to remote vendor access &amp; document retention (comments due Fri)
+
+HelpdeskPro stores tickets in a US region by default. FormFlow can pin EU storage but it is not enabled. CloudOCR is used ad-hoc with personal emails. Proposed effective date: 1 Nov 2026. Backlog: about 18,000 citizen PDFs. Asks: approve the date, accept a HelpdeskPro attachment pause, and nominate owners for retention jobs and Hindi privacy-notice QA.</pre>
+    </div>
+
+    <div class="card">
+      <h2>Saved Apertus brief</h2>
+      <p class="note">Already generated on 2 Oct 2026 from that sample. Model used after the v1.5 id was unavailable: swiss-ai/Apertus-8B-Instruct-2509 via Public AI. No new inference call was made to build this page. Only the summary and five actions were kept from that run; risks, decisions, and open questions were not stored, so they are not invented here.</p>
+      <p><strong>Summary.</strong> Draft update to remote vendor access &amp; document retention (comments due Fri).</p>
+      <h2>Next actions</h2>
+      <ol>
+        <li>Confirm approval of Nov 1 effective date by Friday</li>
+        <li>Accept HelpdeskPro pause as interim risk control</li>
+        <li>Nominate owners for retention batch jobs and Hindi privacy notice QA</li>
+        <li>Schedule training for front-desk staff</li>
+        <li>Provide quote for HelpdeskPro migration budget</li>
+      </ol>
+    </div>
+  </main>
+</body>
+</html>
