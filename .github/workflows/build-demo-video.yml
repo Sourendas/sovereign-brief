@@ -2,7 +2,7 @@ name: build-demo-video
 on:
   push:
     paths:
-      - "demo/slides/**"
+      - "demo/build_demo_mp4.sh"
       - ".github/workflows/build-demo-video.yml"
   workflow_dispatch:
 permissions:
@@ -10,29 +10,14 @@ permissions:
 jobs:
   mp4:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Render slides and write mp4
+      - name: Render demo mp4 with ffmpeg
+        timeout-minutes: 10
         run: |
           set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg librsvg2-bin
-          mkdir -p /tmp/sb-frames
-          i=0
-          for svg in demo/slides/01.svg demo/slides/02.svg demo/slides/03.svg demo/slides/04.svg demo/slides/05.svg; do
-            i=$((i+1))
-            rsvg-convert -w 1280 -h 720 "$svg" -o "/tmp/sb-frames/slide0${i}.png"
-          done
-          ffmpeg -y \
-            -loop 1 -t 6 -i /tmp/sb-frames/slide01.png \
-            -loop 1 -t 8 -i /tmp/sb-frames/slide02.png \
-            -loop 1 -t 7 -i /tmp/sb-frames/slide03.png \
-            -loop 1 -t 9 -i /tmp/sb-frames/slide04.png \
-            -loop 1 -t 7 -i /tmp/sb-frames/slide05.png \
-            -filter_complex "[0:v][1:v][2:v][3:v][4:v]concat=n=5:v=1:a=0,fps=24,format=yuv420p" \
-            -c:v libx264 -profile:v high -pix_fmt yuv420p -crf 28 -preset veryfast -movflags +faststart \
-            demo/sovereign-brief-demo.mp4
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name -of default=nw=1 demo/sovereign-brief-demo.mp4
+          bash demo/build_demo_mp4.sh
           git config user.name "Souren Das"
           git config user.email "sourendas0@gmail.com"
           git add demo/sovereign-brief-demo.mp4
@@ -41,4 +26,4 @@ jobs:
             exit 0
           fi
           git commit -m "Add SovereignBrief demo video"
-          git push
+          git push origin HEAD:main
