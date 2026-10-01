@@ -1,0 +1,33 @@
+INTERNAL MEMO — Contoso Municipal Ops
+Date: 2026-09-28
+To: Ops Leads / Privacy Working Group
+From: City Clerk Office
+Subject: Draft update to remote vendor access & document retention (comments due Fri)
+
+1) Context
+We currently allow three SaaS vendors (HelpdeskPro, FormFlow, CloudOCR) to process
+citizen PDF submissions. Legal flagged that HelpdeskPro stores tickets in a US region
+by default. FormFlow can pin EU storage but we have not enabled it. CloudOCR is used
+ad-hoc by two departments with personal emails.
+
+2) Proposed changes (effective 1 Nov 2026 if approved)
+- All citizen document processing must use vendors with an EU or CH data region, or
+  an on-prem / self-hosted alternative approved by IT Security.
+- Personal email accounts may not be used for CloudOCR or similar OCR tools.
+- Retention: citizen PDFs older than 24 months must be deleted or anonymized unless
+  a statutory hold applies. Current backlog: ~18,000 files; IT estimates 3 weeks of
+  weekend batch jobs.
+- New intake form must include a short privacy notice in EN and HI (Hindi) for the
+  largest non-English applicant group.
+
+3) Open issues
+- Budget for migrating HelpdeskPro: quote pending; interim option is pausing new
+  ticket attachments until region pin is live.
+- Training for front-desk staff not scheduled.
+- No owner assigned yet for the Hindi privacy-notice translation QA.
+- CloudOCR personal-account usage: inventory incomplete (Facilities + Parks unknown).
+
+4) Ask
+Please confirm by Friday whether we (a) approve the Nov 1 effective date, (b) accept
+the HelpdeskPro pause as interim risk control, and (c) nominate owners for retention
+batch jobs and Hindi notice QA.
