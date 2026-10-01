@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SovereignBrief — Apertus action briefs</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --border: #2d3a4f;
+      --text: #e7ecf3;
+      --muted: #9aa8bc;
+      --accent: #3d9cf0;
+      --accent2: #5bd6a2;
+      --danger: #f07178;
+      --warn: #e6c07b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1c2a44, transparent),
+                  radial-gradient(900px 500px at 100% 0%, #14352855, transparent),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    h1 { margin: 0; font-size: 1.35rem; letter-spacing: 0.02em; }
+    .tag {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: 0.75rem;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 1rem 1.5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    textarea {
+      width: 100%;
+      min-height: 280px;
+      resize: vertical;
+      background: #0c1118;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      font: 0.9rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: 0.75rem;
+    }
+    select, input[type="file"] {
+      background: #0c1118;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.6rem;
+      font-size: 0.9rem;
+    }
+    button {
+      background: var(--accent);
+      color: #041018;
+      border: none;
+      border-radius: 8px;
+      padding: 0.55rem 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: pre-wrap;
+    }
+    #status.error { color: var(--danger); }
+    #out h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+    }
+    #out section {
+      margin-bottom: 0.9rem;
+    }
+    #out ul { margin: 0.25rem 0 0 1.1rem; padding: 0; }
+    #out li { margin: 0.25rem 0; }
+    .summary {
+      background: #0c1118;
+      border-left: 3px solid var(--accent2);
+      padding: 0.65rem 0.75rem;
+      border-radius: 0 8px 8px 0;
+      line-height: 1.45;
+    }
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    pre.md {
+      white-space: pre-wrap;
+      background: #0c1118;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-size: 0.82rem;
+      max-height: 220px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>SovereignBrief</h1>
+      <div class="tag">Apertus-powered action briefs · Hack Apertus Track 2B</div>
+    </div>
+    <span class="badge" id="healthBadge">checking…</span>
+  </header>
+  <main>
+    <div class="panel">
+      <label for="doc">Paste policy / ops text</label>
+      <textarea id="doc" placeholder="Paste a memo, policy draft, or ops note…"></textarea>
+      <div class="row">
+        <label for="lang" style="margin:0">Second language</label>
+        <select id="lang">
+          <option value="">None</option>
+          <option value="hi">Hindi (hi)</option>
+          <option value="en">English (en)</option>
+          <option value="de">German (de)</option>
+        </select>
+        <input type="file" id="file" accept=".txt,.md,.pdf,text/plain,application/pdf" />
+      </div>
+      <div class="row">
+        <button id="btnBrief">Generate brief</button>
+        <button class="secondary" id="btnSample" type="button">Load sample</button>
+        <button class="secondary" id="btnCopy" type="button" disabled>Copy markdown</button>
+      </div>
+      <div id="status"></div>
+    </div>
+    <div class="panel" id="out">
+      <p class="meta">Results appear here. No accounts required for the demo UI.</p>
+    </div>
+  </main>
+  <script>
+    const docEl = document.getElementById("doc");
+    const langEl = document.getElementById("lang");
+    const fileEl = document.getElementById("file");
+    const statusEl = document.getElementById("status");
+    const outEl = document.getElementById("out");
+    const btnBrief = document.getElementById("btnBrief");
+    const btnSample = document.getElementById("btnSample");
+    const btnCopy = document.getElementById("btnCopy");
+    const healthBadge = document.getElementById("healthBadge");
+    let lastMd = "";
+
+    function setStatus(msg, isError) {
+      statusEl.textContent = msg || "";
+      statusEl.className = isError ? "error" : "";
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function toMarkdown(b) {
+      const lines = [
+        "# SovereignBrief",
+        "",
+        "## Summary",
+        b.summary || "",
+        "",
+        "## Risks",
+        ...(b.risks || []).map((r) => `- ${r}`),
+        "",
+        "## Decisions needed",
+        ...(b.decisions_needed || []).map((d) => `- ${d}`),
+        "",
+        "## Next actions",
+        ...(b.next_actions || []).map(
+          (a, i) => `${i + 1}. **${a.action}** — owner: ${a.owner}; due: ${a.due}`
+        ),
+        "",
+        "## Open questions",
+        ...(b.open_questions || []).map((q) => `- ${q}`),
+      ];
+      if (b.second_language) {
+        lines.push("", `## Second language (${b.second_language_code || "?"})`, b.second_language);
+      }
+      return lines.join("\n");
+    }
+
+    function renderBrief(b) {
+      lastMd = toMarkdown(b);
+      btnCopy.disabled = !lastMd;
+      const actions = (b.next_actions || [])
+        .map(
+          (a) =>
+            `<li><strong>${escapeHtml(a.action)}</strong> <span class="meta">· ${escapeHtml(a.owner)} · ${escapeHtml(a.due)}</span></li>`
+        )
+        .join("");
+      const list = (arr) =>
+        (arr || []).length
+          ? `<ul>${arr.map((x) => `<li>${escapeHtml(x)}</li>`).join("")}</ul>`
+          : "<p class='meta'>(none)</p>";
+      outEl.innerHTML = `
+        <section>
+          <h2>Summary</h2>
+          <div class="summary">${escapeHtml(b.summary || "")}</div>
+        </section>
+        <section><h2>Risks</h2>${list(b.risks)}</section>
+        <section><h2>Decisions needed</h2>${list(b.decisions_needed)}</section>
+        <section><h2>Next actions (5)</h2><ul>${actions}</ul></section>
+        <section><h2>Open questions</h2>${list(b.open_questions)}</section>
+        ${
+          b.second_language
+            ? `<section><h2>Second language (${escapeHtml(b.second_language_code || "")})</h2><div class="summary">${escapeHtml(b.second_language)}</div></section>`
+            : ""
+        }
+        <section>
+          <h2>Export markdown</h2>
+          <pre class="md">${escapeHtml(lastMd)}</pre>
+        </section>
+      `;
+    }
+
+    async function refreshHealth() {
+      try {
+        const r = await fetch("/api/health");
+        const h = await r.json();
+        const token = h.token_configured ? "token ok" : "HF_TOKEN missing";
+        healthBadge.textContent = `${h.model} · ${token}`;
+        healthBadge.style.color = h.token_configured || h.local_endpoint ? "var(--accent2)" : "var(--warn)";
+      } catch (e) {
+        healthBadge.textContent = "API offline";
+        healthBadge.style.color = "var(--danger)";
+      }
+    }
+
+    btnSample.addEventListener("click", async () => {
+      setStatus("Loading sample…");
+      try {
+        const r = await fetch("/api/sample");
+        if (!r.ok) throw new Error(await r.text());
+        const data = await r.json();
+        docEl.value = data.text;
+        setStatus(`Loaded ${data.filename}`);
+      } catch (e) {
+        setStatus(String(e.message || e), true);
+      }
+    });
+
+    btnCopy.addEventListener("click", async () => {
+      if (!lastMd) return;
+      try {
+        await navigator.clipboard.writeText(lastMd);
+        setStatus("Markdown copied.");
+      } catch {
+        setStatus("Copy failed — select the markdown block manually.", true);
+      }
+    });
+
+    btnBrief.addEventListener("click", async () => {
+      const text = docEl.value.trim();
+      const file = fileEl.files && fileEl.files[0];
+      if (!text && !file) {
+        setStatus("Paste text or choose a small .txt/.md/.pdf file.", true);
+        return;
+      }
+      btnBrief.disabled = true;
+      setStatus("Calling Apertus… (free-tier latency varies)");
+      try {
+        let r;
+        if (file) {
+          const fd = new FormData();
+          if (text) fd.append("text", text);
+          if (langEl.value) fd.append("second_language", langEl.value);
+          fd.append("file", file);
+          r = await fetch("/api/brief/upload", { method: "POST", body: fd });
+        } else {
+          r = await fetch("/api/brief", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              text,
+              second_language: langEl.value || null,
+            }),
+          });
+        }
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          throw new Error(body.detail || r.statusText || "request failed");
+        }
+        renderBrief(body);
+        setStatus("Brief ready.");
+      } catch (e) {
+        setStatus(String(e.message || e), true);
+      } finally {
+        btnBrief.disabled = false;
+      }
+    });
+
+    refreshHealth();
+  </script>
+</body>
+</html>
